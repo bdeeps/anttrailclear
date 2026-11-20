@@ -1,0 +1,112 @@
+{
+  "slug": "anttrailclear",
+  "box": 253,
+  "date": "2026-12-20",
+  "title": "AntTrailClear",
+  "question": "How do ants find the shortest path?",
+  "hook": "No ant knows the map, yet a colony finds the shortest way to food in minutes. Watch hundreds of simulated ants lay scent, run the famous two-bridge experiment yourself, and see how the same trick routes trucks and data.",
+  "thumbText": "HOW ANTS FIND PATHS",
+  "field": "nature",
+  "minutes": 14,
+  "tags": [
+    "ants",
+    "ant trail",
+    "pheromone",
+    "double bridge",
+    "self-organisation",
+    "emergence",
+    "swarm intelligence",
+    "desert ant",
+    "ant colony optimization",
+    "nature",
+    "biology",
+    "three.js"
+  ],
+  "explainer": [
+    {
+      "title": "A trail made of smell",
+      "text": "A forager that finds food walks home dabbing trail pheromone on the ground. Nestmates follow the scent, find the food and add their own on the way back. More ants make more scent, which draws more ants. The scent also evaporates, so a trail lasts only while ants keep refreshing it."
+    },
+    {
+      "title": "Two bridges, one winner",
+      "text": "In 1989 a Brussels team joined Argentine ants to food by a bridge with a short and a long branch. With the long branch twice as long, all 14 colonies settled on the short one. Ants on it get back sooner, so it is marked more often and pulls ahead. Nobody measures anything."
+    },
+    {
+      "title": "Chance and lock-in",
+      "text": "With two equal branches, colonies still end up on one, picked by chance. And when the short branch was only added after the long one was in use, just 2 of 18 colonies switched. Feedback finds good paths quickly, but an early trail can trap the colony."
+    },
+    {
+      "title": "No one in charge",
+      "text": "The queen lays eggs; she does not lead. Each ant follows a few local rules: wander, turn toward stronger scent, carry food home and mark the way. Trails to every food pile, and the switch when one runs out, emerge from those rules. This is self-organisation."
+    },
+    {
+      "title": "More than smell",
+      "text": "Saharan desert ants forage alone and lay no trails. They run straight home by path integration: a sky compass for direction and a step count for distance. Ants given stilts at the food overshot home, at about 15 m instead of 10; ants on stumps stopped at about 6 m. Army ants that follow only scent can get stuck in a circle, an ant mill."
+    },
+    {
+      "title": "Ants in computers",
+      "text": "In the early 1990s Marco Dorigo turned the idea into Ant Colony Optimization. Virtual ants build routes, favouring short roads and roads with more virtual pheromone, which evaporates each round. Good roads are reinforced, so the colony homes in on short tours. Variants are used for routing and scheduling problems."
+    }
+  ],
+  "concepts": [
+    {
+      "term": "Pheromone",
+      "def": "A chemical signal released by one animal that changes the behaviour of others of its species."
+    },
+    {
+      "term": "Trail pheromone",
+      "def": "Scent laid on the ground that leads nestmates to food."
+    },
+    {
+      "term": "Positive feedback",
+      "def": "A loop where more of something produces even more of it: more ants, more scent, more ants."
+    },
+    {
+      "term": "Evaporation",
+      "def": "Scent drifting away over time, so unused trails fade and the colony can forget."
+    },
+    {
+      "term": "Double-bridge experiment",
+      "def": "A test where a nest and food are linked by two branches, to see which one the colony chooses."
+    },
+    {
+      "term": "Self-organisation",
+      "def": "Order that arises from many local interactions, with no leader or plan."
+    },
+    {
+      "term": "Stigmergy",
+      "def": "Coordination through marks left in the environment, like scent on the ground."
+    },
+    {
+      "term": "Path integration",
+      "def": "Keeping a running total of direction and distance travelled, so the way home is always known."
+    },
+    {
+      "term": "Ant mill",
+      "def": "A circle of ants each following the one ahead, which can continue until they are exhausted."
+    },
+    {
+      "term": "Ant Colony Optimization",
+      "def": "Computer methods that use simulated ants and evaporating virtual pheromone to find good routes."
+    }
+  ],
+  "links": {},
+  "storage": [
+    {
+      "key": "anttrailclear.v1",
+      "what": "Which chapters you have opened, your best quiz scores, and sound on or off."
+    }
+  ],
+  "credits": [
+    {
+      "name": "three.js",
+      "license": "MIT",
+      "url": "https://threejs.org"
+    },
+    {
+      "name": "Geist, Instrument Serif",
+      "license": "SIL OFL 1.1",
+      "url": "https://openfontlicense.org"
+    }
+  ]
+}

@@ -1,0 +1,982 @@
+{
+  "title": "The history of the ant trail",
+  "tagline": "From a proverb that says ants have no ruler to step-counting desert ants, a maze of 32,768 paths, and algorithms that route network traffic.",
+  "intro": "People have praised ants for thousands of years, but for a long time nobody asked how a colony finds its way. Naturalists in the 1800s and early 1900s started to test ants with moved objects, candles, mazes and mirrors. In the 1950s the trail turned out to be chemical, and in 1989 a lab study showed that simple trail-following can pick the shorter route with no ant in charge. That idea became a family of computer algorithms. Some details are still argued over, and this history says so where they are.",
+  "eras": [
+    {
+      "id": "watch",
+      "name": "Watchers and proverbs",
+      "from": -620,
+      "to": 700,
+      "color": "#c49bff",
+      "summary": "Fables, proverbs and scripture hold ants up as models of hard work and good sense. Nobody yet asks how they find their way."
+    },
+    {
+      "id": "natural",
+      "name": "Naturalists and first experiments",
+      "from": 1810,
+      "to": 1921,
+      "color": "#ffb547",
+      "summary": "Naturalists in Europe, North Africa and the United States move objects, shift candles, trim antennae, build mazes and hold up mirrors to see what ants follow."
+    },
+    {
+      "id": "scent",
+      "name": "The chemistry of trails",
+      "from": 1944,
+      "to": 1991,
+      "color": "#ff7a59",
+      "summary": "Army ants that follow each other in circles show how strong trail-following is. Then the trail itself is traced to a gland and shown to be a chemical signal."
+    },
+    {
+      "id": "nav",
+      "name": "Compass and step counter",
+      "from": 1949,
+      "to": 2006,
+      "color": "#5ce1a9",
+      "summary": "Bees and desert ants turn out to read the pattern of light in the sky. Desert ants also keep a running tally of where home is, partly by counting steps."
+    },
+    {
+      "id": "self",
+      "name": "No one in charge",
+      "from": 1989,
+      "to": 2012,
+      "color": "#8ef0ff",
+      "summary": "Lab studies show colonies pick shorter routes through simple feedback. Computer scientists copy the trick to solve route problems and steer data through networks."
+    }
+  ],
+  "events": [
+    {
+      "year": -560,
+      "date": "attributed to Aesop, c. 6th century BCE",
+      "era": "watch",
+      "art": "word",
+      "title": "The ants and the grasshopper",
+      "who": "Attributed to Aesop",
+      "where": "Ancient Greece",
+      "country": "Greece",
+      "text": "In this fable, ants store grain in summer while a grasshopper plays music. When winter comes, the ants refuse to feed him. In the original Greek the insect is a cicada. Historians are not sure Aesop was a real person.",
+      "why": "It made ants a lasting symbol of planning ahead, long before anyone studied how they forage.",
+      "sources": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "year": -400,
+      "date": "collected over centuries; final form c. 5th–3rd century BCE",
+      "era": "watch",
+      "art": "scroll",
+      "key": true,
+      "title": "\"Go to the ant\"",
+      "who": "Book of Proverbs, traditionally ascribed to Solomon",
+      "where": "Ancient Israel and Judah",
+      "country": "Israel",
+      "text": "Proverbs 6:6–8 tells the lazy person to study the ant. It says the ant has no guide, overseer or ruler, yet gathers its food in summer. Scholars cannot date the sayings exactly; the book grew over a long time.",
+      "why": "It names, very early, the puzzle this box explores: a colony that works well with nobody in charge.",
+      "box": "emerge",
+      "sources": [
+        0,
+        1
+      ]
+    },
+    {
+      "year": 617,
+      "date": "c. 615–619 CE (second Meccan period, by tradition)",
+      "era": "watch",
+      "art": "quill",
+      "title": "The valley of the ants",
+      "who": "Quran, Surah An-Naml (\"The Ant\")",
+      "where": "Mecca, Arabia",
+      "country": "Saudi Arabia",
+      "text": "In verse 27:18, Solomon's army reaches a valley of ants. One ant warns the others to go into their homes so they are not crushed by accident. The whole chapter takes its name from the ants.",
+      "why": "It shows ants as creatures that warn and steer each other, an idea later studies turned into chemistry.",
+      "sources": [
+        5,
+        6
+      ]
+    },
+    {
+      "year": 1810,
+      "date": "1810",
+      "era": "natural",
+      "art": "leaf",
+      "title": "A whole book on native ants",
+      "who": "Pierre Huber",
+      "where": "Published in Paris",
+      "country": "France",
+      "text": "Pierre Huber, son of the bee scientist François Huber, published a book of close observations of the ants around him. His father had trained him as an observer. An English translation followed in 1820.",
+      "why": "It treated ant behaviour as something to be watched patiently and described in detail.",
+      "sources": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "year": 1882,
+      "date": "experiments 1872–1874, book 1882",
+      "era": "natural",
+      "art": "candles",
+      "key": true,
+      "title": "Candles, turntables and lost ants",
+      "who": "John Lubbock",
+      "where": "England",
+      "country": "United Kingdom",
+      "text": "Lubbock moved objects, turned boards and rotated tables under walking ants. When he moved the candles lighting his table, most ants went the wrong way: in one test, five out of seven. He concluded that ants are strongly guided by the direction of light, and he found they respond to near-ultraviolet light.",
+      "why": "It was an early controlled test of what ants actually use to find their way.",
+      "box": "compass",
+      "sources": [
+        10,
+        11
+      ]
+    },
+    {
+      "year": 1904,
+      "date": "1900–1907; key paper 1904",
+      "era": "natural",
+      "art": "nose",
+      "key": true,
+      "title": "How ants know their nestmates",
+      "who": "Adele Marion Fielde",
+      "where": "Marine Biological Laboratory, Woods Hole, Massachusetts",
+      "country": "United States",
+      "text": "After years as a missionary in Bangkok and in Swatow, China, Fielde studied ants at Woods Hole. In 1903 she trimmed parts of ants' antennae to find which segments they use to recognise nestmates, and in 1904 she published on their power of recognition. She also designed a portable glass observation nest.",
+      "why": "She showed that the antennae carry the signals ants use to tell friend from stranger.",
+      "sources": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "year": 1907,
+      "date": "September 1907",
+      "era": "natural",
+      "art": "compass",
+      "key": true,
+      "title": "The homing of ants",
+      "who": "Charles Henry Turner",
+      "where": "United States",
+      "country": "United States",
+      "text": "Turner, an African American zoologist, ran ants of about a dozen species through mazes. He concluded they were not steered by a homing instinct alone, but used several cues and memory. The looping paths ants make near home were later named \"Turner's circling\" in his honour.",
+      "why": "It showed that ant navigation involves learning, not just a fixed reflex.",
+      "box": "compass",
+      "sources": [
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "year": 1910,
+      "date": "1910",
+      "era": "natural",
+      "art": "road",
+      "title": "Do ants add up their path?",
+      "who": "Victor Cornetz",
+      "where": "Algiers, Algeria",
+      "country": "Algeria",
+      "text": "Some scientists argued that a homing ant retraces its own steps. Cornetz, working in Algiers, remarked that ants seemed to combine their outward path into a direct way home instead. The argument ran on for decades.",
+      "why": "It is an early statement of what is now called path integration.",
+      "box": "compass",
+      "sources": [
+        18,
+        19
+      ]
+    },
+    {
+      "year": 1910,
+      "date": "1910",
+      "era": "natural",
+      "art": "word",
+      "title": "Ants: the big textbook",
+      "who": "William Morton Wheeler",
+      "where": "New York, United States",
+      "country": "United States",
+      "text": "Wheeler's book Ants: their structure, development and behavior was published by Columbia University Press. It counted about 5,000 described species, subspecies and varieties, and told readers how to build Fielde's nests. Wheeler also coined the word myrmecology.",
+      "why": "It gave the new science of ants a shared reference and a name.",
+      "sources": [
+        20,
+        13,
+        21
+      ]
+    },
+    {
+      "year": 1911,
+      "date": "1911",
+      "era": "natural",
+      "art": "compass",
+      "key": true,
+      "title": "The mirror and the sun",
+      "who": "Félix Santschi",
+      "where": "Kairouan, Tunisia",
+      "country": "Tunisia",
+      "text": "Santschi concluded that ants steer by the sun, at least under some conditions. In his best-known test, a homing harvester ant walked into shade and he used a mirror to shine the sun on it from the other side. The ant turned so the light struck it from the same side as before.",
+      "why": "It showed that ants can use the sky as a compass, a key part of how they get home.",
+      "box": "compass",
+      "sources": [
+        19,
+        22,
+        23
+      ]
+    },
+    {
+      "year": 1921,
+      "date": "1921",
+      "era": "natural",
+      "art": "orbit",
+      "title": "A circle of ants that would not stop",
+      "who": "William Beebe",
+      "where": "Kartabo, British Guiana",
+      "country": "Guyana",
+      "text": "Beebe watched army ants march in a loop about 1,200 feet around, each ant taking about two and a half hours per lap. The circle ran for more than a day until exhausted ants broke away and led the rest off.",
+      "why": "It showed that blindly following the ant in front can trap a whole group.",
+      "box": "spiral",
+      "sources": [
+        24,
+        25
+      ]
+    },
+    {
+      "year": 1944,
+      "date": "1944",
+      "era": "scent",
+      "art": "orbit",
+      "title": "Milling explained by trail-following",
+      "who": "T. C. Schneirla",
+      "where": "New York, United States",
+      "country": "United States",
+      "text": "Schneirla published a study of a circular mill in army ants in American Museum Novitates. He treated the mill in relation to how army ants follow trails. Ants caught in such a mill may keep running until they die of exhaustion.",
+      "why": "It linked a strange disaster to the same trail rule that normally helps ants.",
+      "box": "spiral",
+      "sources": [
+        25,
+        48
+      ]
+    },
+    {
+      "year": 1949,
+      "date": "1949",
+      "era": "nav",
+      "art": "eye",
+      "title": "Bees read polarised skylight",
+      "who": "Karl von Frisch",
+      "where": "",
+      "country": "",
+      "text": "Von Frisch found that honeybees can use the pattern of polarised light in the sky as a compass. Later ant researchers called this an epoch-making discovery. It raised the question of what insect eyes actually read from the sky.",
+      "why": "It opened the door to finding the same skylight compass in ants.",
+      "box": "compass",
+      "sources": [
+        18
+      ]
+    },
+    {
+      "year": 1959,
+      "date": "lab work summer 1958, published 1959",
+      "era": "scent",
+      "art": "gland",
+      "key": true,
+      "title": "The trail is a chemical",
+      "who": "E. O. Wilson",
+      "where": "Harvard University, Cambridge, Massachusetts",
+      "country": "United States",
+      "text": "Wilson dissected fire ants and tested their glands. When he crushed Dufour's gland, near the sting, and painted an artificial trail, ants poured out of the nest and followed it. He reported the finding in Science in 1959.",
+      "why": "It proved that an ant trail is a chemical message, which is the heart of the shortest-path trick.",
+      "box": "scent",
+      "sources": [
+        26,
+        27
+      ]
+    },
+    {
+      "year": 1959,
+      "date": "1959",
+      "era": "scent",
+      "art": "molecule",
+      "title": "Each species has its own trail",
+      "who": "E. O. Wilson and Mario Pavan",
+      "where": "",
+      "country": "",
+      "text": "Wilson and Pavan tested glands in several ant species. In some, the trail came from a different gland, the ventral organ. Trails made from one species' glands did not attract other species.",
+      "why": "It showed that trail signals are private channels, not a single universal scent.",
+      "box": "scent",
+      "sources": [
+        27
+      ]
+    },
+    {
+      "year": 1968,
+      "date": "from 1968",
+      "era": "nav",
+      "art": "mountain",
+      "title": "A lifetime with desert ants",
+      "who": "Rüdiger Wehner",
+      "where": "University of Zurich, Switzerland",
+      "country": "Switzerland",
+      "text": "Wehner began studying Cataglyphis desert ants in 1968. His group went on to describe their toolkit: a skylight compass, a path integrator, and memories of landmarks and routes.",
+      "why": "Desert ants became the best-studied model of how a tiny brain navigates.",
+      "box": "compass",
+      "sources": [
+        18,
+        19
+      ]
+    },
+    {
+      "year": 1988,
+      "date": "1988",
+      "era": "nav",
+      "art": "compass",
+      "key": true,
+      "title": "Desert ants keep a running total",
+      "who": "Martin Müller and Rüdiger Wehner",
+      "where": "Salt pans of Tunisia",
+      "country": "Tunisia",
+      "text": "Desert ants wander on the way out but run straight home. Müller and Wehner showed they keep track of direction and distance as they go and add them up into a home vector. One account says that after a 500-metre trip, the error was about 2 degrees in direction and 10 percent in distance.",
+      "why": "It explained how an ant can take the shortest way home without any trail.",
+      "box": "compass",
+      "sources": [
+        30,
+        18
+      ]
+    },
+    {
+      "year": 1989,
+      "date": "1989",
+      "era": "self",
+      "art": "road",
+      "key": true,
+      "title": "Self-organised shortcuts",
+      "who": "Simon Goss, Serge Aron, Jean-Louis Deneubourg and Jacques Pasteels",
+      "where": "Brussels, Belgium",
+      "country": "Belgium",
+      "text": "Argentine ants in the lab reached food over a bridge with two branches. When one branch was twice as long, all 14 colonies settled on the short one; when it was 1.4 times as long, 15 of 18 did. If the short branch was added 30 minutes late, only 2 of 18 colonies switched to it.",
+      "why": "This is the experiment behind the box, and the idea that inspired ant algorithms.",
+      "box": "bridge",
+      "sources": [
+        50,
+        31,
+        33
+      ]
+    },
+    {
+      "year": 1990,
+      "date": "1990",
+      "era": "self",
+      "art": "road",
+      "title": "A rule for choosing a branch",
+      "who": "Jean-Louis Deneubourg, Serge Aron, Simon Goss and Jacques Pasteels",
+      "where": "",
+      "country": "",
+      "text": "The team published a model of how Argentine ants explore. Each ant's chance of picking a branch rises steeply as that branch carries more pheromone. Later studies still use this rule to model bridge experiments.",
+      "why": "It turned the bridge result into a simple formula that computers can copy.",
+      "box": "bridge",
+      "sources": [
+        34,
+        50
+      ]
+    },
+    {
+      "year": 1990,
+      "date": "1990; Pulitzer Prize 1991",
+      "era": "scent",
+      "art": "trophy",
+      "title": "The Ants wins a Pulitzer",
+      "who": "Bert Hölldobler and E. O. Wilson",
+      "where": "Harvard University, United States",
+      "country": "United States",
+      "text": "Hölldobler and Wilson published The Ants, a huge survey of what was known about ants. It won the 1991 Pulitzer Prize for General Nonfiction. Wilson called it a synthesis of everything known.",
+      "why": "It gathered a century of ant science, trails included, into one book.",
+      "sources": [
+        28,
+        29
+      ]
+    },
+    {
+      "year": 1991,
+      "date": "1991 paper; PhD thesis 1992",
+      "era": "self",
+      "art": "computer",
+      "key": true,
+      "title": "Ants become an algorithm",
+      "who": "Marco Dorigo, with Alberto Colorni and Vittorio Maniezzo",
+      "where": "Politecnico di Milano, Italy",
+      "country": "Italy",
+      "text": "Colorni, Dorigo and Maniezzo presented ant-inspired optimisation at a 1991 conference in Paris. Dorigo's 1992 PhD thesis set out the Ant System. Virtual ants lay virtual pheromone on good routes, and it was first tried on the travelling salesman problem.",
+      "why": "It turned a lesson from real ants into a general way to search for short routes.",
+      "box": "aco",
+      "sources": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "year": 1996,
+      "date": "1996",
+      "era": "self",
+      "art": "chip",
+      "title": "Ant System in print",
+      "who": "Marco Dorigo, Vittorio Maniezzo and Alberto Colorni",
+      "where": "",
+      "country": "",
+      "text": "The full Ant System paper appeared in an IEEE journal. On a standard 30-city problem it often matched the best tour found by a genetic algorithm, and it also found a slightly shorter one. It was also partly tried on a 75-city problem.",
+      "why": "It gave other researchers a clear recipe to build on.",
+      "box": "aco",
+      "sources": [
+        37
+      ]
+    },
+    {
+      "year": 1997,
+      "date": "1997",
+      "era": "self",
+      "art": "computer",
+      "title": "Ant Colony System",
+      "who": "Marco Dorigo and Luca Maria Gambardella",
+      "where": "Brussels, Belgium and Lugano, Switzerland",
+      "country": "Belgium",
+      "text": "Dorigo and Gambardella improved the method. Ants also update the pheromone as they walk, and it was tested on maps of up to 1,577 cities. With an extra local search step, it was competitive with some of the best methods of the time.",
+      "why": "It showed that ant algorithms could handle problems of real size.",
+      "box": "aco",
+      "sources": [
+        32,
+        35
+      ]
+    },
+    {
+      "year": 1998,
+      "date": "1998",
+      "era": "self",
+      "art": "share",
+      "title": "Ants route network traffic",
+      "who": "Gianni Di Caro and Marco Dorigo",
+      "where": "",
+      "country": "",
+      "text": "AntNet sends small software agents through a network. They explore, share information through the network itself, and update routing tables, much like ants marking trails. In tests on realistic IP networks it beat six well-known routing methods.",
+      "why": "It took the ant idea from puzzles to live systems that must adapt.",
+      "box": "aco",
+      "sources": [
+        38
+      ]
+    },
+    {
+      "year": 2004,
+      "date": "2004",
+      "era": "self",
+      "art": "road",
+      "title": "Ants avoid traffic jams",
+      "who": "Audrey Dussutour, Vincent Fourcassié, Dirk Helbing and Jean-Louis Deneubourg",
+      "where": "",
+      "country": "",
+      "text": "Ants were given two routes. When traffic was light, they used one trail. When it was crowded, ants pushing each other led to a second trail opening before the flow of food slowed down.",
+      "why": "It showed the shortest-path rule bends sensibly when the short path is full.",
+      "box": "emerge",
+      "sources": [
+        39
+      ]
+    },
+    {
+      "year": 2006,
+      "date": "30 June 2006",
+      "era": "nav",
+      "art": "speedo",
+      "key": true,
+      "title": "Ants on stilts",
+      "who": "Matthias Wittlinger, Rüdiger Wehner and Harald Wolf",
+      "where": "Tunisia, with the University of Ulm, Germany",
+      "country": "Tunisia",
+      "text": "The team glued pig bristles to desert ants' legs as stilts and shortened other ants' legs. Trained to a nest 10 metres away, stilt ants walked about 15 metres and stump ants about 6. After a day or two on their new legs, they judged distance correctly again.",
+      "why": "It showed desert ants measure distance partly by counting steps.",
+      "box": "compass",
+      "sources": [
+        40,
+        41,
+        30
+      ]
+    },
+    {
+      "year": 2009,
+      "date": "2009",
+      "era": "self",
+      "art": "car",
+      "title": "No jams on the ant highway",
+      "who": "Alexander John, Andreas Schadschneider, Debashish Chowdhury and Katsuhiro Nishinari",
+      "where": "Cologne, Germany; IIT Kanpur, India; University of Tokyo, Japan",
+      "country": "India",
+      "text": "Physicists filmed one-way trails of the ant Leptogenys processionalis. Unlike cars, the ants kept almost the same average speed as traffic grew denser. They never overtook each other and moved in platoons.",
+      "why": "It showed that a busy trail can stay fast, which helps a short route stay short.",
+      "box": "emerge",
+      "sources": [
+        42,
+        49,
+        43
+      ]
+    },
+    {
+      "year": 2011,
+      "date": "December 2010 online; 2011 in print",
+      "era": "self",
+      "art": "block",
+      "key": true,
+      "title": "Ants solve the Towers of Hanoi",
+      "who": "Chris Reid, David Sumpter and Madeleine Beekman",
+      "where": "University of Sydney, Australia, and Uppsala University, Sweden",
+      "country": "Australia",
+      "text": "The team turned the Towers of Hanoi puzzle into a maze with 32,768 possible paths, only two of them shortest. Argentine ants found short routes. When paths were blocked they first took a longer route, then switched to the best one.",
+      "why": "It showed real ants solving a hard, changing route problem, not just a simple fork.",
+      "box": "bridge",
+      "sources": [
+        44,
+        45
+      ]
+    },
+    {
+      "year": 2012,
+      "date": "August 2012",
+      "era": "self",
+      "art": "share",
+      "title": "The \"anternet\"",
+      "who": "Deborah Gordon and Balaji Prabhakar",
+      "where": "Stanford University; field colonies in Arizona",
+      "country": "United States",
+      "text": "Gordon studied how harvester ants decide how many foragers to send out. The rate of returning foragers sets the pace, much like the way the internet's TCP protocol gauges bandwidth. If no forager returns for over 20 minutes, no new ones leave.",
+      "why": "It showed that colonies run on simple feedback rules, with no leader, like the trail rule.",
+      "box": "emerge",
+      "sources": [
+        46,
+        47
+      ]
+    }
+  ],
+  "firsts": [
+    {
+      "label": "Ant trail substance traced to a gland (Dufour's gland, fire ant)",
+      "value": "1958–1959",
+      "who": "E. O. Wilson, United States"
+    },
+    {
+      "label": "Ant algorithm for the travelling salesman problem (Ant System)",
+      "value": "1991–1992",
+      "who": "Alberto Colorni, Marco Dorigo and Vittorio Maniezzo, Italy"
+    },
+    {
+      "label": "Experimental evidence of a stride-counting odometer in any animal, per the study's senior scientist",
+      "value": "2006",
+      "who": "Matthias Wittlinger, Rüdiger Wehner and Harald Wolf"
+    }
+  ],
+  "people": [
+    {
+      "name": "Pierre Huber",
+      "life": "",
+      "role": "Naturalist",
+      "from": "",
+      "note": "Son of the bee scientist François Huber; published a book of ant observations in 1810."
+    },
+    {
+      "name": "John Lubbock",
+      "life": "1834 – 1913",
+      "role": "Naturalist and politician",
+      "from": "England",
+      "note": "Tested ants with moved candles and turning tables, and found they respond to near-ultraviolet light."
+    },
+    {
+      "name": "Adele Marion Fielde",
+      "life": "1839 – 1916",
+      "role": "Missionary and ant researcher",
+      "from": "United States",
+      "note": "Worked in Bangkok and Swatow, China, then showed at Woods Hole how ants use their antennae to know nestmates."
+    },
+    {
+      "name": "Charles Henry Turner",
+      "life": "1867 – 1923",
+      "role": "Zoologist and high school teacher",
+      "from": "United States",
+      "note": "African American scientist whose maze experiments showed ants use memory and several cues to get home."
+    },
+    {
+      "name": "Félix Santschi",
+      "life": "1872 – 1940",
+      "role": "Entomologist",
+      "from": "Switzerland",
+      "note": "Working in Kairouan, Tunisia, he showed with a mirror that ants steer by the sun."
+    },
+    {
+      "name": "William Morton Wheeler",
+      "life": "1865 – 1937",
+      "role": "Entomologist",
+      "from": "United States",
+      "note": "Wrote the 1910 textbook Ants and coined the word myrmecology."
+    },
+    {
+      "name": "William Beebe",
+      "life": "1877 – 1962",
+      "role": "Naturalist",
+      "from": "United States",
+      "note": "Described an army ant mill about 1,200 feet around in British Guiana."
+    },
+    {
+      "name": "E. O. Wilson",
+      "life": "1929 – 2021",
+      "role": "Biologist",
+      "from": "United States",
+      "note": "Traced the fire ant trail to Dufour's gland and co-wrote The Ants."
+    },
+    {
+      "name": "Rüdiger Wehner",
+      "life": "",
+      "role": "Neurobiologist, University of Zurich",
+      "from": "Switzerland",
+      "note": "Studied Cataglyphis desert ants from 1968, revealing their skylight compass and path integration."
+    },
+    {
+      "name": "Marco Dorigo",
+      "life": "",
+      "role": "Computer scientist",
+      "from": "Italy and Belgium",
+      "note": "Set out the Ant System in his 1992 PhD thesis in Milan and later led ant-algorithm research in Brussels."
+    },
+    {
+      "name": "Audrey Dussutour",
+      "life": "",
+      "role": "Biologist",
+      "from": "",
+      "note": "Lead author of the study showing crowded ants open a second trail before traffic slows."
+    },
+    {
+      "name": "Debashish Chowdhury",
+      "life": "",
+      "role": "Physicist, IIT Kanpur",
+      "from": "India",
+      "note": "Co-author of the study showing ant trails do not jam like roads."
+    },
+    {
+      "name": "Katsuhiro Nishinari",
+      "life": "",
+      "role": "Researcher in aeronautics and astronautics, University of Tokyo",
+      "from": "Japan",
+      "note": "Co-author of the ant traffic study."
+    },
+    {
+      "name": "Madeleine Beekman",
+      "life": "",
+      "role": "Biologist, University of Sydney",
+      "from": "Australia",
+      "note": "Co-led the Towers of Hanoi maze study with Argentine ants."
+    },
+    {
+      "name": "Deborah Gordon",
+      "life": "",
+      "role": "Biologist, Stanford University",
+      "from": "United States",
+      "note": "Showed harvester ants regulate foraging with a feedback rule like the internet's TCP."
+    }
+  ],
+  "series": [
+    {
+      "id": "tsp",
+      "title": "Biggest map tried in the first ant-algorithm papers",
+      "unit": "cities",
+      "log": true,
+      "after": "self",
+      "caption": "Within a year, published ant algorithms went from maps of tens of cities to more than 1,500.",
+      "points": [
+        {
+          "year": 1996,
+          "value": 75,
+          "label": "Ant System paper: partly tested on a 75-city problem (main tests used 30 cities)"
+        },
+        {
+          "year": 1997,
+          "value": 1577,
+          "label": "Ant Colony System: a 1,577-city problem, about 3.3–3.5% from the best known bounds"
+        }
+      ]
+    },
+    {
+      "id": "species",
+      "title": "Known kinds of ant",
+      "unit": "described species",
+      "log": false,
+      "after": "self",
+      "caption": "Every new species may forage in its own way. The count has nearly tripled since 1910, and many more are thought to exist.",
+      "points": [
+        {
+          "year": 1910,
+          "value": 5000,
+          "label": "Wheeler: about 5,000 described species, subspecies and varieties"
+        },
+        {
+          "year": 2026,
+          "value": 13800,
+          "label": "More than 13,800 described, of an estimated 22,000 (Wikipedia, 2026)"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    "Beebe's army ant mill was about 1,200 feet around, and one lap took an ant about two and a half hours.",
+    "The Towers of Hanoi maze had 32,768 possible paths to the food, and only two were the shortest.",
+    "Desert ants on stilts walked about 15 metres to reach a nest 10 metres away. Ants with shortened legs stopped at about 6.",
+    "Harvester ants send out no new foragers if none come back for more than 20 minutes, much like an internet time-out.",
+    "In the Ant System's main test, its virtual ants found a 30-city tour shorter than the best one a genetic algorithm had found."
+  ],
+  "sources": [
+    {
+      "title": "Proverbs 6:6–8 (King James Version)",
+      "publisher": "Bible Gateway",
+      "url": "https://www.biblegateway.com/passage/?search=Proverbs+6%3A6-8&version=KJV"
+    },
+    {
+      "title": "Book of Proverbs",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Book_of_Proverbs"
+    },
+    {
+      "title": "The Ants & the Grasshopper (The Æsop for Children)",
+      "publisher": "Library of Congress, read.gov",
+      "url": "https://read.gov/aesop/052.html"
+    },
+    {
+      "title": "The Ant and the Grasshopper",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Ant_and_the_Grasshopper"
+    },
+    {
+      "title": "Aesop",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aesop"
+    },
+    {
+      "title": "Surah An-Naml, verse 27:18",
+      "publisher": "Quran.com",
+      "url": "https://quran.com/27/18"
+    },
+    {
+      "title": "An-Naml",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/An-Naml"
+    },
+    {
+      "title": "Recherches sur les moeurs des fourmis indigènes (P. Huber, Paris: Paschoud, 1810), scan",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/recherchessurles00hube"
+    },
+    {
+      "title": "The natural history of ants (Huber, English translation, 1820)",
+      "publisher": "Wellcome Collection",
+      "url": "https://wellcomecollection.org/works/nddg3m22"
+    },
+    {
+      "title": "François Huber",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Huber"
+    },
+    {
+      "title": "Ants, Bees and Wasps (John Lubbock, Kegan Paul, Trench), scan of a later edition",
+      "publisher": "Internet Archive (Digital Library of India)",
+      "url": "https://archive.org/details/in.ernet.dli.2015.222463"
+    },
+    {
+      "title": "John Lubbock, 1st Baron Avebury",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/John_Lubbock,_1st_Baron_Avebury"
+    },
+    {
+      "title": "Three odd incidents in ant life (Adele M. Fielde, 1904 reprints)",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/threeoddincident00fiel"
+    },
+    {
+      "title": "Women's History: Adele Marion Fielde",
+      "publisher": "Myrmecological News Blog",
+      "url": "https://blog.myrmecologicalnews.org/2020/03/08/womens-history-adele-marion-fielde/"
+    },
+    {
+      "title": "Adele M. Fielde",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adele_M._Fielde"
+    },
+    {
+      "title": "The Journal of Comparative Neurology and Psychology, vol. 17 (1907), which contains Turner's \"The Homing of Ants\"",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/journalofcompara17wist"
+    },
+    {
+      "title": "Charles Henry Turner's insights into animal behavior were a century ahead of their time",
+      "publisher": "Nautilus",
+      "url": "https://nautil.us/charles-henry-turners-insights-into-animal-behavior-were-a-century-ahead-of-their-time-364116"
+    },
+    {
+      "title": "Charles Henry Turner (zoologist)",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Charles_Henry_Turner_(zoologist)"
+    },
+    {
+      "title": "Desert ant navigation: how miniature brains solve complex tasks (R. Wehner, Karl von Frisch Lecture, Journal of Comparative Physiology A, 2003)",
+      "publisher": "Springer-Verlag; copy hosted by Bennington College",
+      "url": "https://bennington.edu/doc/22426"
+    },
+    {
+      "title": "Les yeux \"boussole\": un instrument de navigation des insectes sociaux (R. Wehner, Actes des Colloques Insectes Sociaux 8, 1993)",
+      "publisher": "Actes des Colloques Insectes Sociaux; copy hosted by dictionnaire-amoureux-des-fourmis.fr",
+      "url": "https://dictionnaire-amoureux-des-fourmis.fr/Especes/Cataglyphis/ACTES-COLLOQUES-INSECTES-SOCIAUX-VOL8-Wehner.pdf"
+    },
+    {
+      "title": "Ants: their structure, development and behavior (W. M. Wheeler, New York: Columbia University Press, 1910), scan",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/antstheirstructu00whee"
+    },
+    {
+      "title": "Myrmecology",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Myrmecology"
+    },
+    {
+      "title": "The psychic life of insects (E.-L. Bouvier, London: T. Fisher Unwin, 1922), scan",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/psychiclifeofins00bouv"
+    },
+    {
+      "title": "Felix Santschi",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Felix_Santschi"
+    },
+    {
+      "title": "Edge of the Jungle (William Beebe, New York: H. Holt, 1921), scan",
+      "publisher": "Internet Archive",
+      "url": "https://archive.org/details/edgeofjungle00beebiala"
+    },
+    {
+      "title": "Ant mill",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ant_mill"
+    },
+    {
+      "title": "Speaking Pheromone: how science is done, in the lab of E.O. Wilson (Richard Rhodes)",
+      "publisher": "Harvard Magazine",
+      "url": "https://www.harvardmagazine.com/node/77783"
+    },
+    {
+      "title": "Glandular sources and specificity of some chemical releasers of social behavior in dolichoderine ants (Wilson and Pavan, Psyche 66, 1959)",
+      "publisher": "Cambridge Entomological Club, Psyche archive",
+      "url": "https://groups.csail.mit.edu/mac/projects/psyche/66/66-070.html"
+    },
+    {
+      "title": "The Ants",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Ants"
+    },
+    {
+      "title": "Harvard's E.O. Wilson and B. Hölldobler share 1991 Pulitzer Prize for The Ants",
+      "publisher": "The Scientist",
+      "url": "https://www.the-scientist.com/harvards-eo-wilson-and-b-holldobler-share-1991-pulitzer-prize-for-the-ants-60600"
+    },
+    {
+      "title": "Desert ants are better than most high school students at trigonometry (Jason G. Goldman, 2012)",
+      "publisher": "Scientific American blogs",
+      "url": "https://www.scientificamerican.com/blog/thoughtful-animal/desert-ants-are-better-at-trigonometry-than-most-high-school-students/"
+    },
+    {
+      "title": "Behavior of real ants",
+      "publisher": "IRIDIA, Université Libre de Bruxelles",
+      "url": "https://iridia.ulb.ac.be/~mdorigo/ACO/RealAnts.html"
+    },
+    {
+      "title": "Ant Colony System: a cooperative learning approach to the traveling salesman problem (Dorigo and Gambardella, IEEE Transactions on Evolutionary Computation 1(1), 1997), preprint",
+      "publisher": "IRIDIA technical report; copy hosted by the University of Washington",
+      "url": "https://faculty.washington.edu/paymana/swarm/dorigo97-itec.pdf"
+    },
+    {
+      "title": "Ant colony optimization algorithms",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms"
+    },
+    {
+      "title": "Individual rules for trail pattern formation in Argentine ants (Perna et al., 2012)",
+      "publisher": "arXiv",
+      "url": "https://www.arxiv.org/pdf/1201.5827"
+    },
+    {
+      "title": "About ACO: a short history",
+      "publisher": "IRIDIA, Université Libre de Bruxelles",
+      "url": "https://iridia.ulb.ac.be/~mdorigo/ACO/about.html"
+    },
+    {
+      "title": "Marco Dorigo, home page",
+      "publisher": "IRIDIA, Université Libre de Bruxelles",
+      "url": "https://iridia.ulb.ac.be/~mdorigo/HomePageDorigo/"
+    },
+    {
+      "title": "The Ant System: optimization by a colony of cooperating agents (Dorigo, Maniezzo and Colorni, IEEE Transactions on Systems, Man, and Cybernetics B 26(1), 1996)",
+      "publisher": "IEEE; copy hosted by the University of Washington",
+      "url": "https://faculty.washington.edu/paymana/swarm/dorigo96-itsmc.pdf"
+    },
+    {
+      "title": "AntNet: distributed stigmergetic control for communications networks (Di Caro and Dorigo, JAIR 9, 1998)",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/1105.5449"
+    },
+    {
+      "title": "Optimal traffic organisation in ants under crowded conditions (Dussutour et al., Nature 428, 2004)",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/cond-mat/0403142"
+    },
+    {
+      "title": "The ant odometer: stepping on stilts and stumps (Wittlinger, Wehner and Wolf, Science 312, 2006, DOI 10.1126/science.1126912)",
+      "publisher": "AAAS; copy hosted by Johannes Gutenberg University Mainz",
+      "url": "https://www.staff.uni-mainz.de/cduch/Softskills_SS2013/3-4_Ants%20on%20Stilts%20Pedometers/12_ants%20on%20stilts_paper.pdf"
+    },
+    {
+      "title": "Stilts for ants make case for pedometer (Susan Milius, 2006)",
+      "publisher": "Science News",
+      "url": "https://www.sciencenews.org/?p=953"
+    },
+    {
+      "title": "Trafficlike collective movement of ants on trails: absence of jammed phase (John et al., Physical Review Letters 102, 2009)",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/0903.2717"
+    },
+    {
+      "title": "Optimized by evolution, ants don't have traffic jams",
+      "publisher": "Phys.org",
+      "url": "https://phys.org/news157627187.html"
+    },
+    {
+      "title": "Optimisation in a natural system: Argentine ants solve the Towers of Hanoi (Reid, Sumpter and Beekman, Journal of Experimental Biology 214, 2011)",
+      "publisher": "Macquarie University research portal",
+      "url": "https://researchers.mq.edu.au/en/publications/optimisation-in-a-natural-system-argentine-ants-solve-the-towers-/"
+    },
+    {
+      "title": "Next generation of algorithms inspired by problem-solving ants",
+      "publisher": "Phys.org (University of Sydney)",
+      "url": "https://phys.org/news/2010-12-algorithms-problem-solving-ants.html"
+    },
+    {
+      "title": "Stanford researchers discover the 'anternet' (Bjorn Carey, Stanford Report)",
+      "publisher": "Stanford Bio-X",
+      "url": "https://biox.stanford.edu/node/2422"
+    },
+    {
+      "title": "Harvester ants and the 'anternet' (news release, 29 August 2012)",
+      "publisher": "ScienceDaily (Stanford University)",
+      "url": "https://www.sciencedaily.com/releases/2012/08/120829094209.htm"
+    },
+    {
+      "title": "Ant",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ant"
+    },
+    {
+      "title": "Trafficlike collective movement of ants on trails, full text with author affiliations",
+      "publisher": "ar5iv (arXiv)",
+      "url": "https://ar5iv.labs.arxiv.org/html/0903.2717"
+    },
+    {
+      "title": "Self-organized shortcuts in the Argentine ant (Naturwissenschaften 76:579–581)",
+      "publisher": "Université libre de Bruxelles, DI-fusion repository",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/19271/1/042GossNaturwissenschaften89.pdf"
+    }
+  ]
+}
